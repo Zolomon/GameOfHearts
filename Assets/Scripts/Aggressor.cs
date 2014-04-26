@@ -8,16 +8,17 @@ using System;
 public class Aggressor : MonoBehaviour {
 	public Vector3 Direction;
 	public float Speed;
-	public float maxRadius;
-	public float minRadius;
-	public event EventHandler test; 
+	public float MaxRadius;
+	public float MinRadius;
+	public event EventHandler ShootBacteria;
+	public float Rotation;
 
 	// Use this for initialization
 	void Start () {
 		Speed = 4f;
 		Direction = new Vector3 ();
-		minRadius = 3.0f;
-		maxRadius = 5.0f;
+		MinRadius = 3.0f;
+		MaxRadius = 5.0f;
 	}
 	
 	// Update is called once per frame
@@ -30,23 +31,24 @@ public class Aggressor : MonoBehaviour {
 
 		var newPosition = currentPosition + Direction * Speed * Time.deltaTime;
 
-		//if (Mathf.Sqrt(newPosition.x*newPosition.x + newPosition.y*newPosition.y) < minRadius) {
-		if (newPosition.magnitude < minRadius) {
+		transform.RotateAround (newPosition, Vector3.up, 
+		                        AngleBetween (newPosition, new Vector3 (0, 0, 0)));
+
+		if (newPosition.magnitude < MinRadius) {
 			newPosition.Normalize();
-			newPosition *= minRadius;
+			newPosition *= MinRadius;
 		}
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-			if (test != null) {
-				test(this, EventArgs.Empty);
+			if (ShootBacteria != null) {
+				ShootBacteria(this, EventArgs.Empty);
 			}
 		}
 
-//		if (newPosition.magnitude > maxRadius) {
-//			newPosition.Normalize();
-//			newPosition *= maxRadius;
-//		}
-
 		transform.localPosition = newPosition;
+	}
+
+	float AngleBetween(Vector3 lhs, Vector3 rhs) {
+		return Mathf.Atan2 (rhs.y - lhs.y, rhs.x - lhs.x);
 	}
 }

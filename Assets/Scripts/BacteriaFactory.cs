@@ -24,7 +24,7 @@ namespace AssemblyCSharp
 			if (aggressor == null) {
 				throw new ArgumentNullException();
 			}
-			aggressor.test += OnCreateBacteriaRequested;
+			aggressor.ShootBacteria += OnCreateBacteriaRequested;
 		}
 
 		public void Update() {
@@ -40,11 +40,13 @@ namespace AssemblyCSharp
 		void OnCreateBacteriaRequested (object sender, EventArgs e)
 		{
 			var bacteria = ((GameObject)Instantiate (bacteria_prefab)).GetComponent<Bacteria> ();
+
 			if (bacteria == null) {
 				throw new ArgumentNullException();			
 			}
+
 			bacteria.transform.position = aggressor.transform.position;
-			bacteria.Velocity = bacteria.transform.position - new Vector3 (0, 0, 0);
+			bacteria.Velocity = (aggressor.transform.position - new Vector3 (0, 0, 0)) * -1;
 			bacteria.Velocity.Normalize ();
 		}
 	}
