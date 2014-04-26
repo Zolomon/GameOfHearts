@@ -1,26 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
-using AssemblyCSharp;
 using System.Collections.Generic;
-using System.Linq;
 
 public class Protector : MonoBehaviour {
-	public Vector3 Direction { get; set; }
-	public float Speed { get; set; }
+	public Vector3 Direction;
+	public float Speed;
+	public float maxRadius;
 
 	// Use this for initialization
 	void Start () {
 		Speed = 4f;
 		Direction = new Vector3 ();
+		maxRadius = 3.0f;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		Vector3 currentPosition = transform.position;
-		Direction = new Vector3(Input.GetAxis ("Horizontal Protector"), Input.GetAxis ("Vertical Protector"), 0);
+		Direction = new Vector3(Input.GetAxis ("Horizontal Aggressor"), 
+		                        Input.GetAxis ("Vertical Aggressor"), 0);
 
 		Direction.Normalize ();
 
-		transform.localPosition = currentPosition + Direction * Speed * Time.deltaTime;
+		var newPosition = currentPosition + Direction * Speed * Time.deltaTime;
+
+		if (newPosition.magnitude > maxRadius) {
+			newPosition.Normalize();
+			newPosition *= maxRadius;
+		}
+		
+		transform.localPosition = newPosition;
 	}
 }

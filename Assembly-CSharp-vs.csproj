@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Agressor.cs" />
+     <Compile Include="Assets\Scripts\Aggressor.cs" />
+     <Compile Include="Assets\Scripts\Bacteria.cs" />
+     <Compile Include="Assets\Scripts\BacteriaFactory.cs" />
      <Compile Include="Assets\Scripts\Protector.cs" />
      <Compile Include="Assets\Scripts\Utils.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
