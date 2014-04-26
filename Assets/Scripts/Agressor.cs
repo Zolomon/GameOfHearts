@@ -1,19 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Agressor : MonoBehaviour {
 	public Vector3 Direction {get;set;}
 	public float Speed {get;set;}
-	private int xDir {get;set;}
-	private int yDir {get;set;}
 
 	// Use this for initialization
 	void Start () {
-	
+		Speed = 4f;
+		Direction = new Vector3 ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+	void Update () {
+		Vector3 currentPosition = transform.position;
+		Direction = new Vector3(Input.GetAxis ("Horizontal Aggressor"), Input.GetAxis ("Vertical Aggressor"), 0);
+
+		Direction.Normalize ();
+		
+		transform.localPosition = currentPosition + Direction * Speed * Time.deltaTime;
 	}
 }
