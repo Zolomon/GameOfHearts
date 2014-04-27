@@ -6,6 +6,7 @@ public class HeartScript : MonoBehaviour {
 
 	private float timeBetweenBeats = 1.0f;
 	private float timerToBeat = 0.0f;
+    public GameObject blood;
 
 	bool playingBeatAnimation = false;
 
@@ -32,6 +33,12 @@ public class HeartScript : MonoBehaviour {
 				timerToBeat = 0.0f;
 			}
 		}
+
+        if( anim.speed > 10)
+        {
+            blood.SetActive(true);
+            Destroy(gameObject);
+        }
 	}
 
     internal void ColidedWithBacteria()
