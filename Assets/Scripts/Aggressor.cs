@@ -29,7 +29,7 @@ public class Aggressor : MonoBehaviour {
 
 		Direction.Normalize ();
 
-		var newPosition = currentPosition + Direction * Speed * Time.deltaTime;
+        var newPosition = currentPosition + Direction * Speed * Time.deltaTime;
 
         //transform.RotateAround (newPosition, Vector3.up, 
         //                        AngleBetween (newPosition, new Vector3 (0, 0, 0)));
@@ -38,6 +38,9 @@ public class Aggressor : MonoBehaviour {
 			newPosition.Normalize();
 			newPosition *= MinRadius;
 		}
+
+        newPosition.x = Mathf.Clamp(newPosition.x, -7.5f, 7.5f);
+        newPosition.y = Mathf.Clamp(newPosition.y, -4.0f, 4.0f);        
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (ShootBacteria != null) {
