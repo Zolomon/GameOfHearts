@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83979d9211f11147827eb5ee8abff01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blood: {fileID: 0}
   anim: {fileID: 247497514}
 --- !u!1 &515991583
 GameObject:
