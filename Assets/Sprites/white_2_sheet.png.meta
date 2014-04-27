@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd4de5abf2b875045aa51ecac9903f35
+guid: 3c468b157f9b6a646819565bf0c8a6c9
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -45,7 +45,7 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: Heart_sheet3_0
+    - name: white_2_sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -54,7 +54,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_1
+    - name: white_2_sheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -63,7 +63,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_2
+    - name: white_2_sheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -72,7 +72,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_3
+    - name: white_2_sheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -81,7 +81,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_4
+    - name: white_2_sheet_4
       rect:
         serializedVersion: 2
         x: 256
@@ -90,7 +90,7 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_5
+    - name: white_2_sheet_5
       rect:
         serializedVersion: 2
         x: 320
@@ -99,37 +99,10 @@ TextureImporter:
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_6
+    - name: white_2_sheet_6
       rect:
         serializedVersion: 2
         x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: Heart_sheet3_9
-      rect:
-        serializedVersion: 2
-        x: 576
         y: 0
         width: 64
         height: 64

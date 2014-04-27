@@ -29,5 +29,17 @@ public class Protector : MonoBehaviour {
 		}
 		
 		transform.localPosition = newPosition;
+		KillBacteria ();
+	}
+
+	void KillBacteria(){
+		if (Input.GetKeyDown(KeyCode.Z)) {
+			foreach (GameObject go in GameObject.FindGameObjectsWithTag("bacteria")) {
+				if(Vector3.Distance(go.transform.position,this.transform.position) < 0.75)
+				{
+					Destroy(go);
+				}
+			}		
+		}
 	}
 }
