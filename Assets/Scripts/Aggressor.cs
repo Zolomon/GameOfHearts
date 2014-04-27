@@ -31,9 +31,6 @@ public class Aggressor : MonoBehaviour {
 
         var newPosition = currentPosition + Direction * Speed * Time.deltaTime;
 
-        //transform.RotateAround (newPosition, Vector3.up, 
-        //                        AngleBetween (newPosition, new Vector3 (0, 0, 0)));
-
 		if (newPosition.magnitude < MinRadius) {
 			newPosition.Normalize();
 			newPosition *= MinRadius;
