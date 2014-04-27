@@ -12,6 +12,7 @@ public class Aggressor : MonoBehaviour {
 	public float MinRadius;
 	public event EventHandler ShootBacteria;
 	public float Rotation;
+    public GameStarter game;
 
 	// Use this for initialization
 	void Start () {
@@ -23,9 +24,11 @@ public class Aggressor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!game.GameStarted) return;
+
 		Vector3 currentPosition = transform.position;
-		Direction = new Vector3(Input.GetAxis ("Horizontal Protector"), 
-		                        Input.GetAxis ("Vertical Protector"), 0);
+		Direction = new Vector3(Input.GetAxis ("Horizontal Aggressor"), 
+		                        Input.GetAxis ("Vertical Aggressor"), 0);
 
 		Direction.Normalize ();
 
@@ -39,7 +42,7 @@ public class Aggressor : MonoBehaviour {
         newPosition.x = Mathf.Clamp(newPosition.x, -7.5f, 7.5f);
         newPosition.y = Mathf.Clamp(newPosition.y, -4.0f, 4.0f);        
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.Return)) {
 			if (ShootBacteria != null) {
 				ShootBacteria(this, EventArgs.Empty);
 			}
