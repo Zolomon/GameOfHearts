@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HeartScript : MonoBehaviour {
 
+    public Animator animator = null;
 	// Use this for initialization
 	void Start () {
         
@@ -15,6 +16,9 @@ public class HeartScript : MonoBehaviour {
 
     internal void ColidedWithBacteria()
     {
-      
+        var animState = animator.GetCurrentAnimationClipState(LayerMask.NameToLayer("Default"));
+        var clip = animState[0];
+        
+
     }
 }
